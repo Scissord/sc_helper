@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      width: 1800px;
+      height: 2500px;
+      background-color: aqua;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+    }
+
+    .d1 {
+      width: 100px;
+      height: 100px;
+      background-color: aquamarine;
+      margin: 20px;
+    }
+
+    .d2 {
+      display: flex;
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+    }
+
+    select {
+      align-self: center;
+    }
+
+    .d3 {
+      display: flex;
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background-color: blueviolet;
+    }
+
+    .d4 {
+      display: flex;
+      flex-direction: column;
+      width: 250px;
+      height: 150px;
+      margin: 40px;
+    }
+
+    #mycolor {
+      width: 300px;
+      height: 300px;
+      margin-top: 20px;
+      border: 1px solid #000;
+      background-color: rgb(12, 230, 241);
+      /* Начальный цвет */
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="radio"]#red:checked~#mycolor {
+      background-color: rgb(39, 238, 192);
+    }
+  </style>
+  <header>
+    <div class="d2">
+      <select>
+        <option value="0">Выбери</option>
+        <option value="1" id="green">Зеленый</option>
+        <option value="2" id="yellow">Желтый</option>
+        <option value="3" id="red">Красный</option>
+        <option value="4" id="orange">Оранжевый</option>
+        <option value="5" id="black">Черный</option>
+      </select>
+    </div> <!-- выпадающий список -->
+    <div class="d3">
+      <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    </div> <!-- Ползунок -->
+    <div class="d4"> <!--Радиокнопки-->
+      <input type="radio" name="color" value="green" id="green"> Зеленый
+      <input type="radio" name="color" value="yellow" id="yellow"> Жёлтый
+      <input type="radio" name="color" value="red" id="red"> Красный
+      <input type="radio" name="color" value="orange" id="orange"> Оранжевый
+      <input type="radio" name="color" value="black" id="black"> Чёрный
+    </div>
+  </header>
+  <main>
+    <div class="d1" id="mycolor"></div> <!-- Объект -->
+  </main>
+
+</body>
+
+</html>

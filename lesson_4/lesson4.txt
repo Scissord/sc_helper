@@ -1,0 +1,11 @@
+1) Термины
+
+2) Разбор картинок
+
+3) Игры
+  - https://flexboxfroggy.com/#ru
+  - https://cssgridgarden.com/#ru
+
+4) Шпаргалки
+  - https://tpverstak.ru/flex-cheatsheet/
+  - https://tpverstak.ru/grid/

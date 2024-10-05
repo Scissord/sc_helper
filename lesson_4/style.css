@@ -1,0 +1,7 @@
+.container {
+  background: aqua;
+  display: flex;
+  height: 100px;
+  justify-content: space-around;
+  align-items: flex-end;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Input</title>
+  <style>
+    .custom-input {
+      position: relative;
+      border: 2px solid red;
+      border-right: none;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      font-size: 16px;
+    }
+
+    .custom-input::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-top: 2px solid red;
+      border-right: 2px solid red;
+      height: 15px;
+      /* Adjust to control the height of the right border */
+    }
+
+    .custom-input::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-bottom: 2px solid red;
+      border-right: 2px solid red;
+      height: 15px;
+      /* Adjust to control the height of the right border */
+    }
+  </style>
+</head>
+
+<body>
+
+  <input class="custom-input" type="text" placeholder="Custom input">
+
+</body>
+
+</html>
