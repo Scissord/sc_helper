@@ -1,0 +1,13 @@
+1) Отметить
+
+2) Термины
+  - летающие кнопки
+  - фиксированный header (https://unbounce.com/landing-page-examples/best-landing-page-examples/)
+
+3) Доделать грид с карточками товара
+
+4) сделать footer как у calm
+
+sticky - header
+fixed - floatbutton
+absolute - input
