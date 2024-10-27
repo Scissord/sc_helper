@@ -14,7 +14,6 @@ a {
   top: 0;
   left: 0;
   transform: translateX(-55%) translateY(-10%) scaleX(-1);
-  color: transparent;
 }
 
 .header {
@@ -29,9 +28,13 @@ a {
   justify-content: space-between;
   height: 100%;
 }
-.header .container .logo {
-  width: 100px;
-  height: auto;
+.header .container .logo_container {
+  width: 200px;
+}
+.header .container .logo_container .logo {
+  height: 3rem;
+  width: auto;
+  color: #e2e8f0;
 }
 .header .container .address {
   font-size: 0.875rem;

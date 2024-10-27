@@ -11,6 +11,7 @@ a {
 $primary-color: #2563eb;
 $secondary-color: #4369b3;
 $third-color: #1e3a8a;
+$logo-color: #e2e8f0;
 
 @mixin flex-between {
   display: flex;
@@ -41,7 +42,6 @@ $third-color: #1e3a8a;
   top: 0;
   left: 0;
   transform: translateX(-55%) translateY(-10%) scaleX(-1);
-  color: transparent;
 }
 
 .header {
@@ -52,10 +52,16 @@ $third-color: #1e3a8a;
     @include flex-between;
     height: 100%;
 
-    .logo {
-      width: 100px;
-      height: auto;
+    .logo_container {
+      width: 200px;
+
+      .logo {
+        height: 3rem;
+        width: auto;
+        color: $logo-color;
+      }
     }
+
 
     .address {
       font-size: .875rem;
