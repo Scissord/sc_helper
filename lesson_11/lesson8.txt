@@ -1,21 +1,2 @@
-- z-index
-- Делаем грид, и там делаем ui
-- Упор на стили
-- Отметить
-
-
-
-
-
-
-
-
-
-
-
-
-- extentions: live sass compiler
-- style.scss
-- ctrl + shift + p -> live sass: watch sass
-- должно 2 файла
-- подключаете style.css в index.html
+- показать гитхаб
+- показать картигку + шапку + 1 section

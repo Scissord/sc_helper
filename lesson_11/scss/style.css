@@ -33,12 +33,20 @@ a {
   width: 100px;
   height: auto;
 }
-.header .container .nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 24px;
-  width: 40%;
+.header .container .address {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  color: #2563eb;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+}
+.header .container .address .address_svg {
+  height: 0.375rem;
+  /* 1.5 * 0.25rem */
+  width: 0.375rem;
+  /* 1.5 * 0.25rem */
+  overflow: visible;
+  fill: currentColor;
+  stroke: currentColor;
 }
 .header .container .button {
   background-color: #2563eb;
@@ -74,6 +82,32 @@ a {
   line-height: 2.5rem;
   letter-spacing: -0.025em;
   color: #4369b3;
+}
+.marketing .container .data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 70px;
+}
+.marketing .container .info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.marketing .container .info .info_title {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  color: #2563eb;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+.marketing .container .info .info_description {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  color: #1e3a8a;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
 }
 
 @media (min-width: 640px) {
