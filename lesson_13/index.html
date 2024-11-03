@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <style>
+    .button {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .button:hover {
+      background-color: #2ecc71;
+      color: black;
+    }
+  </style>
+
+  <button class="button">Press</button> -->
+
+  <!-- <style>
+    .card {
+      width: 52px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(130, 13, 13, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+  <div class="card"></div> -->
+
+  <!-- <style>
+    .image {
+      width: 200px;
+      height: 200px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .image:hover {
+      transform: scale(1.1);
+    }
+  </style>
+
+  <img src="./assets/logo.webp" class="image" /> -->
+
+  <!-- animation keypoints -->
+  <!-- <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #3498db;
+      animation: ANIM 2s infinite;
+    }
+
+    @keyframes ANIM {
+      0% {
+        transform: translateY(200px);
+      }
+
+      25% {
+        transform: translate(0px);
+      }
+
+      50% {
+        transform: translateX(200px);
+      }
+
+      75% {
+        transform: translate(0px);
+      }
+
+      100% {
+        transform: translateY(200px);
+      }
+    }
+  </style>
+
+  <div class="box">
+  </div> -->
+
+  <style>
+    /* Общий стиль для спиннера */
+    .spinner {
+      background-color: #5c6ac4;
+      position: absolute;
+      top: 8px;
+      left: 5px;
+      width: 7px;
+      height: 7px;
+      border: 2px solid #e2e2fc;
+      border-top: 2px solid #8a8cf5;
+      border-radius: 50%;
+      animation: spin 5s linear infinite;
+      /* Общая анимация на 5 секунд */
+    }
+
+    /* Ключевые кадры для анимации с тремя разными скоростями */
+    @keyframes spin {
+
+      /* Медленный первый оборот (от 0% до 33%) */
+      0% {
+        transform: rotate(0deg);
+      }
+
+      33% {
+        transform: rotate(360deg);
+      }
+
+      /* Быстрый второй оборот (от 33% до 50%) */
+      50% {
+        transform: rotate(720deg);
+      }
+
+      /* Средний третий оборот (от 50% до 100%) */
+      100% {
+        transform: rotate(1080deg);
+      }
+    }
+
+    .buttonWrapper {
+      position: relative;
+    }
+
+    .button {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 20px;
+      background-color: #5c6ac4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+
+  <div class="buttonWrapper">
+    <div class="spinner">
+    </div>
+    <button class="button">
+      Processing...
+    </button>
+  </div>
+
+</body>
+
+</html>
