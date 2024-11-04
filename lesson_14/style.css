@@ -28,7 +28,7 @@
 }
 
 @keyframes pulse {
-  0% {
+  0%, 100% {
     transform: scale(1);
     opacity: 1;
   }
@@ -36,11 +36,6 @@
   50% {
     transform: scale(1.2);
     opacity: 0.7;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
   }
 }
 
@@ -104,7 +99,6 @@
   width: 100px;
   height: 100px;
   background-color: #2ecc71;
-  margin-top: 100px;
   animation: bounce-in 1s infinite forwards;
 }
 
@@ -145,16 +139,11 @@
   }
 }
 
-.wave {
-  display: inline-block;
-  font-size: 24px;
-  font-weight: bold;
-  color: #2980b9;
-  animation: wave 1s ease-in-out infinite;
-}
-
 .wave span {
   display: inline-block;
+  font-weight: bold;
+  font-size: 50px;
+  color: #2980b9;
   animation: wave 1s ease-in-out infinite;
 }
 
@@ -163,15 +152,16 @@
 .wave span:nth-child(3) { animation-delay: 0.2s; }
 .wave span:nth-child(4) { animation-delay: 0.3s; }
 .wave span:nth-child(5) { animation-delay: 0.4s; }
-.wave span:nth-child(6) { animation-delay: 0.5s; }
-.wave span:nth-child(7) { animation-delay: 0.6s; }
 
 @keyframes wave {
-  0%, 100% {
+  from {
     transform: translateY(0);
   }
   50% {
     transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0);
   }
 }
 
@@ -243,7 +233,6 @@
 }
 
 .jump {
-  display: inline-block;
   animation: jump 1s ease infinite;
 }
 
@@ -265,7 +254,7 @@
 
 @keyframes flip {
   from { transform: rotateY(0); }
-  to { transform: rotateY(180deg); }
+  to { transform: rotateY(360deg); }
 }
 
 .slide-in {
