@@ -1,0 +1,26 @@
+/* Базовая (светлая) тема — используется по умолчанию */
+body {
+  background-color: white;
+  color: black;
+}
+
+.button {
+}
+
+/* Темная тема */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
+
+  .button {
+  }
+}
+
+/* @media (max-width: 768px) {
+  body {
+    background-color: red;
+    color: white;
+  }
+} */
