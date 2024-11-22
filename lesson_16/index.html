@@ -4,11 +4,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <!-- Шрифты -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- иконка -->
+  <link rel="icon" type="image/svg" href="./pics/logo.svg">
+  <!-- глобальные стили / сброс стилей браузера -->
+  <link rel="stylesheet" href="./css/global.css">
+  <!-- шапка -->
+  <link rel="stylesheet" href="./css/header.css">
+  <!-- карусель -->
+  <link rel="stylesheet" href="./css/carousel.css">
+  <title>Selecao</title>
 </head>
 
 <body>
+  <header class="header">
+    <div class="header-container">
+      <h1 class="header-logo">Selecao</h1>
+      <nav class="header-navigation">
+        <a class="header-link">Home</a>
+        <a class="header-link">About</a>
+        <a class="header-link">Services</a>
+        <a class="header-link">Portfolio</a>
+        <a class="header-link">Team</a>
+        <a class="header-link">Blog</a>
+        <a class="header-link">Dropdown</a>
+        <a class="header-link">Contact</a>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <!-- carousel -->
+    <section class="carousel">
+      <div class="carousel-container">
+        <div class="carousel-item active">
+          <h1 class="carousel-item-title">
+            Welcome to <span style="text-decoration: underline;">Selecao</span>
+          </h1>
+          <p class="carousel-item-description">
+            Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam.
+            Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti
+            vel. Minus et tempore modi architecto.
+          </p>
+          <a class="carousel-item-button">
+            Read More
+          </a>
+        </div>
+        <div class="carousel-item">
+          <h1 class="carousel-item-title">
+            Welcome to <span style="text-decoration: underline;">Selecao 2</span>
+          </h1>
+          <p class="carousel-item-description">
+            Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam.
+            Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti
+            vel. Minus et tempore modi architecto.
+          </p>
+          <a class="carousel-item-button">
+            Read More
+          </a>
+        </div>
+        <div class="carousel-item">
+          <h1 class="carousel-item-title">
+            Welcome to <span style="text-decoration: underline;">Selecao 3</span>
+          </h1>
+          <p class="carousel-item-description">
+            Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam.
+            Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti
+            vel. Minus et tempore modi architecto.
+          </p>
+          <a class="carousel-item-button">
+            Read More
+          </a>
+        </div>
+        <img src="./pics/carousel/chevron-left.svg" id="prevBtn" class="carousel-prev-button">
+        <img src="./pics/carousel/chevron-right.svg" id="nextBtn" class="carousel-next-button">
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <script src="./js/carousel.js"></script>
 </body>
 
 </html>
