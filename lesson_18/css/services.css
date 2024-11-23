@@ -1,0 +1,12 @@
+.services {
+  min-height: 80vh;
+  display: flex;
+  position: relative;
+}
+
+.services-container {
+  position: relative;
+  height: 50%;
+  width: 100%;
+  margin: var(--container2);
+}

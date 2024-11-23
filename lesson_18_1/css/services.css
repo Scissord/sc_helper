@@ -1,0 +1,11 @@
+.services {
+  height: 100vh;
+  display: flex;
+}
+
+.services-container {
+  position: relative;
+  height: 50%;
+  width: 100%;
+  margin: var(--container2);
+}
