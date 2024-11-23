@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Шрифты -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- иконка -->
+  <link rel="icon" type="image/svg" href="./pics/logo.svg">
+  <!-- глобальные стили / сброс стилей браузера -->
+  <link rel="stylesheet" href="./css/global.css">
+  <!-- шапка -->
+  <link rel="stylesheet" href="./css/header.css">
+  <!-- карусель -->
+  <link rel="stylesheet" href="./css/carousel.css">
+  <!-- o нас  -->
+  <link rel="stylesheet" href="./css/about.css">
+  <title>Selecao</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-container">
+      <h1 class="header-logo">Selecao</h1>
+      <nav class="header-navigation">
+        <a class="header-link">Home</a>
+        <a class="header-link">About</a>
+        <a class="header-link">Services</a>
+        <a class="header-link">Portfolio</a>
+        <a class="header-link">Team</a>
+        <a class="header-link">Blog</a>
+        <a class="header-link">Dropdown</a>
+        <a class="header-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- carousel -->
+    <section class="carousel">
+      <div class="carousel-container">
+        <div class="carousel-item active">
+          <h1 class="carousel-item-title">
+            Welcome to <span style="text-decoration: underline;">Selecao</span>
+          </h1>
+          <p class="carousel-item-description">
+            Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam.
+            Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti
+            vel. Minus et tempore modi architecto.
+          </p>
+          <a class="carousel-item-button">
+            Read More
+          </a>
+        </div>
+        <div class="carousel-item">
+          <h1 class="carousel-item-title">
+            Welcome to <span style="text-decoration: underline;">Selecao 2</span>
+          </h1>
+          <p class="carousel-item-description">
+            Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam.
+            Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti
+            vel. Minus et tempore modi architecto.
+          </p>
+          <a class="carousel-item-button">
+            Read More
+          </a>
+        </div>
+        <div class="carousel-item">
+          <h1 class="carousel-item-title">
+            Welcome to <span style="text-decoration: underline;">Selecao 3</span>
+          </h1>
+          <p class="carousel-item-description">
+            Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam.
+            Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti
+            vel. Minus et tempore modi architecto.
+          </p>
+          <a class="carousel-item-button">
+            Read More
+          </a>
+        </div>
+
+        <svg id="prevBtn" class="carousel-prev-button" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6L9 12L15 18" class="carousel-button-path" />
+        </svg>
+
+        <svg id="nextBtn" class="carousel-next-button" viewBox="0 0 24 24" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 6L15 12L9 18" class="carousel-button-path" />
+        </svg>
+      </div>
+      <!-- waves -->
+      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+        </defs>
+        <g class="wave1">
+          <use xlink:href="#wave-path" x="50" y="3"></use>
+        </g>
+        <g class="wave2">
+          <use xlink:href="#wave-path" x="50" y="0"></use>
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9"></use>
+        </g>
+      </svg>
+    </section>
+
+    <!-- about -->
+    <section class="about">
+      about
+    </section>
+  </main>
+
+  <footer></footer>
+
+  <script src="./js/carousel.js"></script>
+  <script src="./js/header.js"></script>
+</body>
+
+</html>
