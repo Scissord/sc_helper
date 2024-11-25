@@ -3,8 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
 
   function updateActiveItem(newIndex) {
-    items[currentIndex].classList.remove("active");
-    items[newIndex].classList.add("active");
+    const currentItem = items[currentIndex];
+    const nextItem = items[newIndex];
+
+    // Удалить класс active и reset анимацию
+    currentItem.classList.remove("active", "animate");
+    nextItem.classList.remove("animate");
+
+    setTimeout(() => {
+      nextItem.classList.add("animate");
+    }, 10);
+
+    nextItem.classList.add("active");
     currentIndex = newIndex;
   }
 
@@ -22,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("nextBtn").addEventListener("click", showNextItem);
   document.getElementById("prevBtn").addEventListener("click", showPrevItem);
 
-  // Автоматическое переключение каждые 3 секунды
-  // setInterval(showNextItem, 3000);
+  // Добавить анимацию для начального элемента
+  const initialItem = items[currentIndex];
+  initialItem.classList.add("animate");
 });
