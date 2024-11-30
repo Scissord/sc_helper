@@ -23,6 +23,7 @@
 .header-logo {
   font-family: var(--primary-font-family);
   font-size: 30px;
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -49,4 +50,22 @@
 
 .header-link:hover {
   background-color: var(--brand);
+}
+
+.header-navigation-button {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .header-container {
+    margin: 0px 20px;
+  }
+
+  .header-navigation {
+    display: none;
+  }
+
+  .header-navigation-button {
+    display: block;
+  }
 }

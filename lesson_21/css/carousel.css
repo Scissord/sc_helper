@@ -24,15 +24,19 @@
   color: white;
   text-align: center;
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
 }
 
 .carousel-item.active {
   opacity: 1;
-  pointer-events: auto;
 }
 
+.carousel-item-title {
+  margin-bottom: 30px;
+  font-size: 48px;
+  font-weight: 700;
+  font-family: var(--primary-font-family);
+}
+/* Отсюда */
 .carousel-item.animate .carousel-item-title {
   animation: fadeIn 1s ease-out;
 }
@@ -71,13 +75,6 @@
   }
 }
 
-.carousel-item-title {
-  margin-bottom: 30px;
-  font-size: 48px;
-  font-weight: 700;
-  font-family: var(--primary-font-family);
-}
-
 .carousel-item-description {
   max-width: 65%;
   margin: 0 auto 30px auto;
@@ -95,6 +92,7 @@
   transition: 0.5s;
   line-height: 1;
   margin: 10px;
+  animation-delay: 0.8s;
   color: #fff;
   border: 2px solid var(--brand);
   font-family: var(--default-font-family);
@@ -193,6 +191,32 @@
 
   100% {
     transform: translate(85px, 0%);
+  }
+}
+
+@media (max-width: 1200px) {
+  .carousel {
+    height: 100vh;
+  }
+
+  .carousel-container {
+    margin: 0;
+  }
+
+  .carousel-item {
+    padding: 0;
+  }
+
+  .carousel-item-title {
+    font-size: 28px;
+  }
+
+  .carousel-prev-button {
+    width: 15%;
+  }
+
+  .carousel-next-button {
+    width: 15%;
   }
 }
 

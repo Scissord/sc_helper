@@ -5,7 +5,7 @@
   "beautify.tabSize": 2,
   "editor.detectIndentation": false,
   "files.trimTrailingWhitespace": true,
-  "editor.formatOnSave": true,
+  // "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
   "workbench.editor.enablePreview": false,
