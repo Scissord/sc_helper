@@ -1,0 +1,5 @@
+1. conditions
+2. cycles
+3. find max value in array
+4. arrays with numbers
+5. arrays with strings
