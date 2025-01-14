@@ -207,35 +207,232 @@ const arr = [76, 133, 1352, 1, 2, 52, 2000, -45]
 // };
 // console.log(isPalindrome);
 // 19. Подсчитать сумму чисел на четных индексах
+// let sum = 0;
+// for (let i = 0; i < arr.length; i++) {
+//   if (i % 2 === 0) {
+//     sum += arr[i];
+//   };
+// };
 // 20. Поменять местами максимальное и минимальное значения в массиве
+// 1.1 find indexes of min and max 
+// let minIndex = 0;
+// let maxIndex = 0;
+// cycle 
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] < arr[minIndex]) {
+//     minIndex = i;
+//   }
+//   if (arr[i] > arr[maxIndex]) {
+//     maxIndex = i;
+//   }
+// };
+
+// let tmp = arr[maxIndex];
+// arr[maxIndex] = arr[minIndex];
+// arr[minIndex] = tmp;
 
 // const fruits = ['bananas', 'apples', 'grapes'];
 
 // String Arrays
+const str1 = 'kfgjfkjg';
 // 1. Подсчитать количество гласных в строке
-// 2. Удалить все пробелы из строки
-// 3. Найти самое длинное слово в строке
-// 4. Проверить, является ли строка палиндромом
-// 5. Подсчитать количество слов в строке
-// 6. Заменить все гласные в строке на звездочку
-// 7. Вернуть первые буквы каждого слова в строке
-// 8. Найти количество уникальных символов в строке
-// 9. Перевернуть строку (реверс)
-// 10. Заменить первое слово в строке на заданное слово
+// const vowels = 'aeyio';
+// let counter = 0;
+// for (const letter of str1) {
+//   if (vowels.includes(letter)) {
+//     counter++
+//   };
+// };
+// console.log(counter);
 
-// const arr3 = [
-// ];
+// let str2 = 'Hello, World. Make me trim';
+// str2 = str2.replace(/\s+/g, '');
+// console.log(str2);
+// 2. Удалить все пробелы из строки
+// const str3 = 'I wanna be a superhero';
+// 3. Найти самое длинное слово в строке
+// const words = str3.split(/\s+/);
+// const max = {
+//   length: 0,
+//   word: "",
+// };
+
+// for (const word of words) {
+//   if (word.length > max.length) {
+//     max.length = word.length;
+//     max.word = word;
+//   };
+// };
+// 4. Проверить, является ли строка палиндромом
+// let str4 = 'А собака боса';
+// str4 = str4.toLowerCase();
+// str4 = str4.replace(/\s+/g, '');
+
+// const reversedStr4 = str4.split("").reverse().join("");
+// str4 === reversedStr4
+//   ? console.log(true)
+//   : console.log(false);
+// console.log(reversedStr4);
+// 5. Подсчитать количество слов в строке
+// const str5 = 'I wanna be a superhero, please';
+// const words = str5.split(/\s+/);
+// console.log(words.length);
+
+// 6. Заменить все гласные в строке на звездочку
+// const str6 = 'You are bastard';
+// const result = str6.replace(/[aeiouAEIOU]/g, "*");
+// console.log(result);
+
+// 7. Вернуть первые буквы каждого слова в строке
+// const str7 = 'I wanna be a superhero';
+// const words = str7.split(/\s+/);
+// const firstLetters = words.map((word) => word[0]);
+// console.log(firstLetters);
+
+// 8. Найти количество уникальных символов в строке
+// const str8 = 'a aa abcc c';
+// const uniques = [];
+
+// const splited = str8.split("");
+// for (const letter of splited) {
+//   if (!uniques.includes(letter)) {
+//     uniques.push(letter);
+//   };
+// };
+
+// console.log(uniques.length)
+
+// 9. Перевернуть строку (реверс)
+// const str9 = 'I wanna be a superhero';
+// console.log(str9.split("").reverse().join(""));
+
+// 10. Заменить первое слово в строке на заданное слово
+// const str10 = 'I wanna be a superhero';
+// const words = str10.split(' '); // Split the string into words
+// words[0] = 'They'; // Replace the first word
+// const updatedString = words.join(' '); // Join the words back into a string
+// console.log(updatedString);
 
 // Object Arrays
 // 11. Найти ключ с максимальным значением в объекте
+// const obj = {
+//   apple: 10,
+//   banana: 20,
+//   cherry: 30,
+//   date: 25,
+//   intense: 62,
+// };
+
+// const values = Object.entries(obj);
+// const max = ["", 0];
+// const tmp = values.map((value) => {
+//   if (value[1] > max[1]) {
+//     max[0] = value[0];
+//     max[1] = value[1];
+//   };
+// });
+
+// console.log(max[0]);
+
+// output: cherry
 // 12. Посчитать общее количество свойств в объекте
+// const obj2 = {
+//   apple: 10,
+//   banana: 20,
+//   cherry: 30,
+//   date: 25,
+//   intense: 62,
+// };
+// const length = Object.keys(obj2).length
+// console.log(length);
+
 // 13. Удалить все свойства с пустыми значениями
+// const obj3 = {
+//   name: 'Alice',
+//   age: null,
+//   email: '',
+//   city: 'New York',
+//   phone: undefined
+// };
+
+// const values = Object.entries(obj3);
+// values.forEach((value) => {
+//   if (value[1] === null || value[1] === "" || value[1] === undefined) {
+//     delete obj3[value[0]];
+//   };
+// });
+
+// console.log(obj3);
+
 // 14. Создать массив всех значений объекта
+const obj4 = {
+  apple: 10,
+  banana: true,
+  cherry: "dada",
+  date: null,
+};
+const arr4 = [];
+
+const values = Object.entries(obj4);
+values.forEach((value) => {
+  arr4.push(value[1]);
+});
+// console.log(arr4);
+// output [10, true, "dada", null]
+
 // 15. Объединить два объекта в один
+// const obj5_1 = {
+//   name: 'Alice',
+//   age: null,
+//   email: '',
+//   city: 'New York',
+//   phone: undefined
+// };
+// const obj5_2 = {
+//   apple: 10,
+//   banana: 20,
+//   cherry: 30,
+//   date: 25,
+//   intense: 62,
+// };
+
+// const obj5_3 = { ...obj5_1, ...obj5_2 }
+// console.log(obj5_3);
+
 // 16. Удалить повторяющиеся значения из массива с использованием Set
+// const arr6 = [1, 2, 3, 4, 5, 6, 1, 2, 3, 7, 8, 3, 4, 9];
+// const unique = [...new Set(arr6)];
+// console.log(unique);
+
 // 17. Проверить, есть ли значение в Set
+// const set = new Set([1, 2, 3, 4, 5, 6]);
+// console.log(set.has(7));
+
 // 18. Подсчитать количество элементов в Set
+// const set2 = new Set([1, 2, 3, 4, 5, 6]);
+// console.log(set2.size);
+
 // 19. Добавить и удалить элемент в Map
+// const map = new Map();
+// const objKey = { id: 1 };
+// map.set(objKey, "John");
+// const objKey2 = 2;
+// map.set(objKey2, { name: 'Ivan' });
+// const objKey3 = "val";
+// map.set(objKey3, [1, 2, 3, 4, 5]);
+// map.delete(objKey3);
+// console.log(map);
+
 // 20. Найти сумму всех значений в Map
+const map = new Map([
+  ["a", 20],
+  ["b", 40],
+  ["c", 60],
+]);
 
+let sum = 0;
+for (let [key, value] of map) {
+  sum += value;
+};
 
+console.log(sum);
