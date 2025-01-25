@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 1. подключить axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- 2. подключить tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+</head>
+<body class="">
+  <div class="h-screen overflow-x-auto flex items-center justify-center gap-3">
+    <div class="flex flex-col gap-3">
+      <div class="flex flex-col gap-3 border rouded-lg p-4">
+        <input id="name" placeholder="Имя" class="border rounded-lg px-2 text-sm py-1"/>
+        <input id="login" placeholder="Логин" class="border rounded-lg px-2 text-sm py-1"/>
+        <input id="username" placeholder="Ник" class="border rounded-lg px-2 text-sm py-1"/>
+        <input id="email" placeholder="Почта" class="border rounded-lg px-2 text-sm py-1"/>
+        <input id="phone" placeholder="Телефон" class="border rounded-lg px-2 text-sm py-1"/>
+        <input id="city" placeholder="Город" class="border rounded-lg px-2 text-sm py-1"/>
+        <input id="address" placeholder="Адрес" class="border rounded-lg px-2 text-sm py-1"/>
+        <input id="company" placeholder="Компания" class="border rounded-lg px-2 text-sm py-1"/>
+      </div>
+      <button 
+        id="create_user" 
+        class="border border-black px-4 py-2 text-sm hover:bg-gray-200 transition-all duration-300 ease-in-out rounded-lg"
+      >
+        Создать пользователя
+      </button>
+    </div>
+    <table class="border-collapse border border-slate-500">
+      <thead>
+        <tr>
+          <th class="border border-slate-600">ID</th>
+          <th class="border border-slate-600">Имя</th>
+          <th class="border border-slate-600">Логин</th>
+          <th class="border border-slate-600">Почта</th>
+          <th class="border border-slate-600">Телефон</th>
+          <th class="border border-slate-600">Город</th>
+          <th class="border border-slate-600">Компания</th>
+        </tr>
+      </thead>
+      <tbody id="table_body">
+      </tbody>
+    </table>
+  </div>
+  <!-- 3. подключаем скрипт -->
+  <script src="./script.js"></script>
+</body>
+</html>

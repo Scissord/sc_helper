@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 1. подключить axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- 2. подключить tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+</head>
+<body class="p-6">
+  <div 
+    class="flex flex-col gap-3 w-1/3 border border-slate-200 rounded-lg p-4"
+  >
+    <input 
+      id="name" 
+      class="border" 
+      placeholder="name" 
+    />
+    <input id="email" class="border" placeholder="email"/>
+    <input id="phone" class="border" placeholder="phone"/>
+    <button id="save" class="border">Сохранить</button>
+  </div>
+  <!-- 3. подключаем скрипт -->
+  <script src="./script.js"></script>
+</body>
+</html>

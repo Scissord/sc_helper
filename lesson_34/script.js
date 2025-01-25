@@ -195,8 +195,7 @@ function renderProducts(products) {
       </div>
     `;
     productList.appendChild(productElement);
-  })
-
+  });
 };
 
 // fetchProducts();
