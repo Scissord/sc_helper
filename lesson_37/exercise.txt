@@ -1,0 +1,34 @@
+1) Создаём студента
+method: 'POST'
+url: 'https://api.kazakhcrusader.ru/api/exercise'
+body: {
+  name: 
+  exercise_id: 1,
+}
+- Рисуем форму с заполнение имени
+- Нажимая на кнопку отправляем post запрос
+2) Получаем список студентов
+METHOD: 'GET'
+url: 'https://api.kazakhcrusader.ru/api/exercise?student_id=тут_номер_вашего_id&exercise_id=2'
+- рисуем таблицу
+- запрос выполняется при загрузке страницы
+3) Обновляем информацию о студенте
+METHOD: 'PATCH'
+url: 'https://api.kazakhcrusader.ru/api/exercise?student_id=тут_номер_вашего_id'
+body: {
+  exercise_id: 3,
+  name: ,
+  age: ,
+  gender: ,
+  email: ,
+  phone: ,
+}
+- рисуем форму для обновления
+- на кнопку отправляем запрос
+4) Удаление себя из списка
+METHOD: 'DELETE'
+url: 'https://api.kazakhcrusader.ru/api/exercise?student_id=тут_номер_вашего_id'
+body: {
+  exercise_id: 4
+}
+- ПРОСТО ДОБАВИТЬ КНОПКУ
