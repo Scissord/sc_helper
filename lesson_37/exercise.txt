@@ -2,14 +2,14 @@
 method: 'POST'
 url: 'https://api.kazakhcrusader.ru/api/exercise'
 body: {
-  name: 
+  name:
   exercise_id: 1,
 }
 - Рисуем форму с заполнение имени
 - Нажимая на кнопку отправляем post запрос
 2) Получаем список студентов
 METHOD: 'GET'
-url: 'https://api.kazakhcrusader.ru/api/exercise?student_id=тут_номер_вашего_id&exercise_id=2'
+url: 'https://api.kazakhcrusader.ru/api/exercise?student_id=1&exercise_id=2'
 - рисуем таблицу
 - запрос выполняется при загрузке страницы
 3) Обновляем информацию о студенте
@@ -32,3 +32,10 @@ body: {
   exercise_id: 4
 }
 - ПРОСТО ДОБАВИТЬ КНОПКУ
+5) Нажимаем на id в таблице
+Перходим на users.html url:121.0.0.1/users/1
+METHOD: 'POST'
+url: 'https://api.kazakhcrusader.ru/api/exercise/find?student_id=id_по_которому_кликаете_в_таблице'
+body: {
+  exercise_id: 5
+}

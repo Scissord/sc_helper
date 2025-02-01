@@ -93,12 +93,12 @@ async function updateComment(id, data) {
   if (response.status === 200) {
     // response.data
     // найти элемент в массиве
-    // нужно его заменить на response.data 
+    // нужно его заменить на response.data
     // отрендерить заново html
   };
 };
 
-// 5. УДАЛИТЬ КОММЕНТ   
+// 5. УДАЛИТЬ КОММЕНТ
 async function deleteComment(id) {
   const response = await axios({
     method: 'DELETE',
@@ -106,7 +106,7 @@ async function deleteComment(id) {
   });
 
   if (response.status === 200) {
-    // найти этот коммент в массиве 
+    // найти этот коммент в массиве
     // удалить этот коммент из массива
     // рендрить массив в html
   };
