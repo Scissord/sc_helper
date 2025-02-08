@@ -111,3 +111,67 @@ async function deleteComment(id) {
     // рендрить массив в html
   };
 };
+
+// Функция для получения списка студентов
+async function getStudents() {
+  const url = 'https://api.kazakhcrusader.ru/api/exercise?student_id=15&exercise_id=2';
+
+  const data = await fetch(url);
+  console.log(data);
+
+
+    // .then(response => {
+    //   console.log("Ответ от сервера:", response);  // Логируем объект ответа от сервера
+
+    //   // Проверяем статус ответа
+    //   if (!response.ok) {
+    //       console.error("Ошибка сервера: статус", response.status);
+    //       throw new Error('Ошибка при получении данных, статус: ' + response.status);
+    //   }
+
+    //   // Преобразуем ответ в JSON
+    //   return response.json();
+    // })
+    // .then(data => {
+    //   console.log("Данные, полученные от сервера:", data); // Логируем полученные данные
+
+    //   const tableBody = document.querySelector('#studentsTable tbody');
+    //   tableBody.innerHTML = '';  // Очищаем таблицу перед добавлением новых данных
+    //   console.log("Очищена таблица перед добавлением данных");
+
+    //   // Проверяем, что данные — это массив
+    //   if (Array.isArray(data) && data.length > 0) {
+
+    //     console.log("Данные получены, добавляем их в таблицу");
+
+    //         // Заполняем таблицу данными студентов
+    //         data.forEach(student => {
+    //             const row = document.createElement('tr');
+    //             row.innerHTML = `
+    //                 <td>${student.id}</td>
+    //                 <td>${student.name}</td>
+    //                 <td>${student.exercise_id}</td>
+    //             `;
+    //             tableBody.appendChild(row);
+    //         });
+
+    //         console.log("Данные успешно добавлены в таблицу");
+    //     } else {
+    //         console.log("Данных нет, выводим сообщение");
+    //         // Если данных нет, выводим сообщение
+    //         const row = document.createElement('tr');
+    //         row.innerHTML = '<td colspan="3">Нет данных для отображения</td>';
+    //         tableBody.appendChild(row);
+    //     }
+    // })
+    // .catch(error => {
+    //     console.error("Ошибка при запросе или обработке данных:", error);  // Логируем ошибку
+    //     alert('Произошла ошибка при загрузке данных');
+    // });
+};
+
+// Загружаем список студентов при загрузке страницы
+window.onload = () => {
+  console.log("Страница загружена, начинаем загрузку данных...");
+  getStudents();
+};

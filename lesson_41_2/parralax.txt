@@ -1,0 +1,42 @@
+<div class="parallax">
+  <div class="parallax-background"></div>
+  <div class="parallax-content">
+    <h1>Welcome to the Parallax Effect</h1>
+  </div>
+</div>
+
+.parallax {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.parallax-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%; /* Увеличиваем высоту для эффекта параллакса */
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.parallax-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+
+const parallaxBackground = document.querySelector('.parallax-background');
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  parallaxBackground.style.transform = `translateY(${scrollY * 0.5}px)`; // Фон двигается медленнее
+});
