@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style="margin: 0; padding: 0;">
+  <div class="box" style="width: 100px; height: 100px; background-color: red;"></div>
+  <script>
+    // Получение координатов элемента
+    const element = document.querySelector(".box");
+    const rect = element.getBoundingClientRect();
+    console.log(rect.top, rect.left, rect.width, rect.height);
+
+    // Координаты Курсора
+    document.addEventListener("mousemove", (event) => {
+      console.log("Координаты курсора:", event.clientX, event.clientY);
+    });
+
+    // Пример hover в javascript
+    const box = document.querySelector(".box");
+
+    box.addEventListener("mouseenter", () => {
+      box.style.background = "blue";
+    });
+
+    box.addEventListener("mouseleave", () => {
+      box.style.background = "red";
+    });
+  </script>
+
+</body>
+</html>

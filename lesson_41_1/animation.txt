@@ -10,6 +10,9 @@ css:
   animation: fadeIn 1s ease-in-out;
 }
 
+<div class="box">
+</div>
+
 js:
 const box = document.querySelector('.box');
 let position = 0;

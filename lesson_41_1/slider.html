@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<style>
+  /* Основные стили для контейнера слайдера */
+#slider {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Ограничиваем ширину слайдера */
+  margin: 0 auto; /* Центрируем слайдер */
+  overflow: hidden; /* Скрываем всё, что выходит за пределы контейнера */
+  border: 2px solid #ccc; /* Рамка вокруг слайдера */
+  border-radius: 10px; /* Скругление углов */
+}
+
+/* Стили для контейнера слайдов */
+.slides {
+  display: flex; /* Размещаем слайды в одну строку */
+  transition: transform 0.5s ease; /* Плавный переход между слайдами */
+}
+
+/* Стили для каждого слайда */
+.slide {
+  min-width: 100%; /* Каждый слайд занимает 100% ширины контейнера */
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+  background-color: #f9f9f9; /* Фон слайда */
+  border-right: 1px solid #ccc; /* Разделитель между слайдами */
+}
+
+/* Стили для кнопок навигации */
+#prev, #next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+#prev:hover, #next:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Затемнение при наведении */
+}
+
+#prev {
+  left: 10px; /* Кнопка "Prev" слева */
+}
+
+#next {
+  right: 10px; /* Кнопка "Next" справа */
+}
+</style>
+<div id="slider">
+  <div class="slides">
+    <div class="slide">Slide 1</div>
+    <div class="slide">Slide 2</div>
+    <div class="slide">Slide 3</div>
+  </div>
+  <button id="prev">Prev</button>
+  <button id="next">Next</button>
+</div>
+<script>
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.style.display = i === index ? 'block' : 'none';
+  });
+}
+
+prevBtn.addEventListener('click', () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+});
+
+nextBtn.addEventListener('click', () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+});
+
+showSlide(currentSlide);
+</script>
+</body>
+</html>

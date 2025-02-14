@@ -6,6 +6,30 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="box" style="width: 100px; height: 100px; background: red; position: absolute"></div>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      border: 1px solid black;
+    }
+  </style>
+
+  <div class="box">
+  </div>
+
+  <style>
+    .ball {
+      width: 30px;
+      height: 30px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+      transition: transform 0.1s linear;
+    }
+  </style>
+
+  <div class="ball"></div>
+  <script src="./default.js"></script>
 </body>
 </html>
