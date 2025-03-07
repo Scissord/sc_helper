@@ -314,3 +314,118 @@ moveBox();
     translateY(50px) – движение по оси Y.
     rotate(45deg) – поворот.
     scale(1.5) – увеличение.
+
+
+19. Чем отличаются зависимости (dependencies) и devDependencies в npm?
+
+В package.json файле npm различает два типа зависимостей:
+
+    dependencies — это зависимости, которые необходимы для работы приложения в production (рабочей среде). Обычно сюда входят библиотеки, необходимые для работы кода (например, React, Express, Axios). Устанавливаются с флагом --save (по умолчанию).
+
+    devDependencies — это зависимости, которые нужны только на этапе разработки (например, тестовые библиотеки, линтеры, Webpack, TypeScript). Устанавливаются с флагом --save-dev.
+
+20. Как сгенерировать и проверить JWT-токен в Node.js?
+
+Чтобы работать с JWT в Node.js, используется библиотека jsonwebtoken.
+
+const jwt = require("jsonwebtoken");
+
+const payload = { userId: 123, role: "admin" };
+const secretKey = "your_secret_key";
+
+const token = jwt.sign(payload, secretKey, { expiresIn: "1h" });
+console.log("JWT Token:", token);
+
+const decoded = jwt.verify(token, secretKey);
+console.log("Декодированные данные:", decoded);
+
+21. Какие бывают компоненты в React, и чем функциональные компоненты отличаются от классовых?
+
+В React есть два типа компонентов:
+
+    Функциональные компоненты
+        Это простые JavaScript-функции, которые возвращают JSX-разметку.
+        Используют хуки (useState, useEffect) для управления состоянием.
+        Более простые, читаемые и производительные.
+
+    Классовые компоненты
+        Представляют собой ES6-классы, которые наследуются от React.Component.
+        Используют this.state для управления состоянием.
+        Имеют методы жизненного цикла (componentDidMount, componentDidUpdate).
+
+
+Основные отличия:
+Функциональные	Классовые
+Используют хуки	Используют this.state
+Короткий синтаксис	Длинный синтаксис
+Лучше по производительности	Менее производительные
+Рекомендуются в новых проектах	Устаревают, но поддерживаются
+
+22. Какие основные хуки есть в React, и для чего используется каждый из них?
+
+Хуки позволяют управлять состоянием и жизненным циклом в функциональных компонентах.
+
+    useState – хранит локальное состояние компонента.
+
+const [count, setCount] = useState(0);
+
+useEffect – выполняет побочные эффекты (запросы к API, подписки).
+
+useEffect(() => {
+  console.log("Компонент обновился!");
+}, []);
+
+useContext – доступ к глобальному контексту без пропсов.
+
+const theme = useContext(ThemeContext);
+
+useReducer – альтернатива useState для сложного состояния.
+
+const [state, dispatch] = useReducer(reducer, initialState);
+
+useRef – сохраняет ссылки на DOM-элементы или значения между рендерами.
+
+const inputRef = useRef(null);
+
+useMemo – мемоизация значений для оптимизации.
+
+const expensiveValue = useMemo(() => computeExpensiveValue(data), [data]);
+
+useCallback – мемоизация функций для предотвращения их создания при каждом рендере.
+
+const handleClick = useCallback(() => console.log("Clicked!"), []);
+
+
+23. Какие основные принципы лежат в основе Redux?
+
+Redux основан на трех ключевых принципах:
+
+    Единый источник правды (Single Source of Truth)
+        Все состояние приложения хранится в одном объекте store.
+
+const store = createStore(reducer);
+
+Состояние только для чтения (State is Read-Only)
+
+    Данные изменяются только через actions.
+
+store.dispatch({ type: "INCREMENT" });
+
+Изменения происходят через чистые функции (Changes are Made with Pure Functions)
+
+    Изменения выполняются через reducers, которые не мутируют исходный state.
+
+    function counterReducer(state = { count: 0 }, action) {
+      switch (action.type) {
+        case "INCREMENT":
+          return { count: state.count + 1 };
+        default:
+          return state;
+      }
+    }
+
+Дополнительные принципы:
+
+    Одна направленность данных (Unidirectional Data Flow) – данные текут сверху вниз.
+    Предсказуемость – состояние можно легко восстанавливать и отлаживать.
+    Средства разработки (DevTools) – позволяет откатывать изменения и смотреть историю действий.

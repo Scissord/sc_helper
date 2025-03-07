@@ -332,3 +332,237 @@ anime({
   duration: 2000,
   loop: true
 });
+
+19. Как настроить Vite для работы с React и TypeScript?
+
+Настроить Vite для React и TypeScript очень просто.
+1. Установка Vite с шаблоном React + TypeScript
+
+npm create vite@latest my-app --template react-ts
+# или
+yarn create vite@latest my-app --template react-ts
+# или
+pnpm create vite@latest my-app --template react-ts
+
+2. Установка зависимостей
+
+cd my-app
+npm install  # или yarn install
+
+3. Запуск проекта
+
+npm run dev  # или yarn dev
+
+4. Конфигурация vite.config.ts (если нужно добавить алиасы)
+
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "path";
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+});
+
+Теперь можно импортировать файлы так:
+
+import Button from "@/components/Button";
+
+5. Настройка tsconfig.json
+
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "strict": true,
+    "moduleResolution": "Node"
+  }
+}
+
+Vite с TypeScript работает из коробки, без необходимости в дополнительной конфигурации!
+
+20. Как защитить JWT-токен от кражи и использования злоумышленниками?
+
+JWT-токены уязвимы для атак, если неправильно их хранить и использовать.
+1. Безопасное хранение
+
+✅ Используйте HttpOnly cookies (лучший вариант):
+
+    Локальное хранилище (localStorage) небезопасно — доступно через JS (XSS-атаки).
+    HttpOnly cookies защищены от JS-атак.
+
+Пример установки JWT в HttpOnly cookie:
+
+res.cookie("token", jwtToken, {
+  httpOnly: true,
+  secure: true,
+  sameSite: "Strict"
+});
+
+2. Защита от XSS (межсайтовый скриптинг)
+
+✅ Используйте CSP (Content Security Policy)
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+
+✅ Используйте helmet в Express
+
+npm install helmet
+
+import helmet from "helmet";
+app.use(helmet());
+
+3. Защита от CSRF (подмена запросов)
+
+✅ Используйте CSRF-токены вместе с JWT.
+
+✅ Установите заголовок SameSite=Strict или SameSite=Lax.
+4. Использование Refresh Token
+
+✅ Храните Refresh Token в HttpOnly cookies, а Access Token — в памяти.
+
+Токен лучше обновлять каждые 15-30 минут.
+5. Подпись и шифрование JWT
+
+✅ Используйте HMAC (HS256) или RSA (RS256) для подписи токена.
+
+21. Как передавать данные между родительским и дочерним компонентами в React?
+
+В React данные передаются сверху вниз (от родителя к дочернему).
+1. Передача через props
+
+const Child = ({ message }: { message: string }) => {
+  return <h1>{message}</h1>;
+};
+
+const Parent = () => {
+  return <Child message="Привет, React!" />;
+};
+
+2. Передача функции для изменения состояния
+
+const Child = ({ onClick }: { onClick: () => void }) => {
+  return <button onClick={onClick}>Нажми</button>;
+};
+
+const Parent = () => {
+  const handleClick = () => alert("Кнопка нажата!");
+  return <Child onClick={handleClick} />;
+};
+
+3. Передача данных от дочернего к родительскому (через callback)
+
+const Child = ({ sendData }: { sendData: (value: string) => void }) => {
+  return <button onClick={() => sendData("Данные от дочернего компонента")}>Отправить</button>;
+};
+
+const Parent = () => {
+  const handleData = (data: string) => console.log(data);
+  return <Child sendData={handleData} />;
+};
+
+22. Как управлять состоянием в React с помощью useReducer, и в чем его отличие от useState?
+Когда использовать useReducer?
+
+    Когда состояние сложное и зависит от предыдущего состояния.
+    Когда есть много типов изменений (например, Redux-подобное состояние).
+
+Пример useState
+
+const [count, setCount] = useState(0);
+
+const increment = () => setCount(count + 1);
+const decrement = () => setCount(count - 1);
+
+Но если логика сложная, лучше использовать useReducer.
+Пример useReducer
+
+import { useReducer } from "react";
+
+const initialState = { count: 0 };
+
+function reducer(state: typeof initialState, action: { type: string }) {
+  switch (action.type) {
+    case "increment":
+      return { count: state.count + 1 };
+    case "decrement":
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <div>
+      <p>Счетчик: {state.count}</p>
+      <button onClick={() => dispatch({ type: "increment" })}>+</button>
+      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+    </div>
+  );
+}
+
+🔥 useReducer vs useState
+useState	useReducer
+Подходит для простого состояния	Для сложного состояния с множеством логики
+Изменение состояния вызывается setState	Используется dispatch(action)
+Может стать неудобным при сложной логике	Поддерживает четкую логику обновления
+
+23. Как использовать Redux Toolkit для упрощения работы с Redux?
+
+Redux Toolkit упрощает работу с Redux, уменьшая "болезненный" шаблонный код.
+1. Установка Redux Toolkit и React Redux
+
+npm install @reduxjs/toolkit react-redux
+
+2. Создание slice (вместо reducers.js)
+
+import { createSlice } from "@reduxjs/toolkit";
+
+const counterSlice = createSlice({
+  name: "counter",
+  initialState: { count: 0 },
+  reducers: {
+    increment: (state) => { state.count += 1; },
+    decrement: (state) => { state.count -= 1; }
+  }
+});
+
+export const { increment, decrement } = counterSlice.actions;
+export default counterSlice.reducer;
+
+3. Подключение store
+
+import { configureStore } from "@reduxjs/toolkit";
+import counterReducer from "./counterSlice";
+
+export const store = configureStore({
+  reducer: { counter: counterReducer }
+});
+
+4. Использование в компоненте
+
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement } from "./counterSlice";
+
+function Counter() {
+  const count = useSelector(state => state.counter.count);
+  const dispatch = useDispatch();
+
+  return (
+    <div>
+      <p>{count}</p>
+      <button onClick={() => dispatch(increment())}>+</button>
+      <button onClick={() => dispatch(decrement())}>-</button>
+    </div>
+  );
+}
+
+Redux Toolkit делает работу с Redux намного проще и удобнее! 🚀
