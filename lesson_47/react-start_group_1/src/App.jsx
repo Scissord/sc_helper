@@ -1,120 +1,40 @@
-import { useState } from 'react';
-import Counter from './components/Counter.jsx';
-import ChevronDown from './icons/ChevronDownIcon.jsx'
-import ChevronUp from './icons/ChevronUp.jsx';
+import { useSelector, useDispatch } from "react-redux";
+import { signin } from "./store/userSlice";
+import { useState } from "react";
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [title, setTitle] = useState("");
-  const [array, setArray] = useState([
-    {
-      id: 1,
-      title: 'ZOOM',
-      cards: [
-        {
-          id: 1,
-          content: 'qwewqe 1'
-        },
-        {
-          id: 2,
-          content: 'qwewqe 2'
-        },
-      ]
-    },
-    {
-      id: 2,
-      title: 'Отметить',
-      cards: [
-        {
-          id: 3,
-          content: 'контент 3'
-        }
-      ]
-    }
-  ]);
+  const user = useSelector(state => state.user);
+  const dispatch = useDispatch();
 
-  function handleChangeIsOpen() {
-    setIsOpen(!isOpen);
-  };
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <div>
-      <Counter
-        title={title}
-        setTitle={setTitle}
-        label="привет"
-      />
-
-      {isOpen ? (
-        <ChevronUp
-          handleChangeIsOpen={handleChangeIsOpen}
-        />
+      {user.id ? (
+        <div>Зашёл</div>
       ) : (
-        <ChevronDown
-          handleChangeIsOpen={handleChangeIsOpen}
-        />
-      )}
-
-      {array.map(list => (
-        <div style={{ border: '1px solid black' }}>
-          {list.title}
-          {list.cards.map(card => (
-            <div>
-              {card.content}
-            </div>
-          ))}
+        <div>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button onClick={() => dispatch(signin({
+            name: name,
+            password: password,
+          }))}>
+            Принять
+          </button>
         </div>
-      ))}
+      )}
     </div>
   )
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { useState } from 'react';
-
-// function App() {
-//   const [input, setInput] = useState("123");
-
-
-
-
-  // function handleChangeInput(result) {
-  //   setInput(result)
-  // }
-
-//   return (
-//     <div>
-//       <p>{isOpen}</p>
-//       <button onClick={() => handleChangeIsOpen(isOpen === "true" ? "false" : "true")}>
-//         Изменить состояние
-//       </button>
-//       <input
-//         value={input}
-//         onChange={(e) => handleChangeInput(e.target.value)}
-//       />
-//     </div>
-//   )
-// }
-
-// export default App
